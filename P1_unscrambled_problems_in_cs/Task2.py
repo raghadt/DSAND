@@ -41,4 +41,4 @@ for i in range(len(calls)):
 
 max_number, max_duration = max(calls_dictionary.items(), key=lambda x: x[1])
 
-print("{} spent the longest time, {} seconds, on the phone during".format(max_number,max_duration))
+print("{} spent the longest time, {} seconds, on the phone during September 2016.".format(max_number,max_duration))

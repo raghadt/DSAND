@@ -1,0 +1,44 @@
+Time Analysis for project #1:
+
+Task #0:
+Time: O(1)
+Space: O(1)
+Explanation: This is a direct solution of accessing a list via an index
+
+-------------------------------------------------------------------------------
+
+Task #1:
+Time: O(1)
+Space: O(1)
+Explanation: This is a direct solution of accessing a list via an index
+
+-------------------------------------------------------------------------------
+
+Task #1:
+Time: O(n)
+Space: O(n)
+Explanation: There are two seperate for loop, meaning the time will be at worst case (n) because we have to loop through all items in a list.
+
+
+-------------------------------------------------------------------------------
+
+Task #2:
+Time: O(n)
+Space: O(n)
+Explanation: for loop was used along with max() function, at worst case it will be of time (n)
+
+-------------------------------------------------------------------------------
+
+Task #3:
+Time: O(nlogn)
+Space: O(n)
+Explanation: although no double loops were used, yet sorted() function was used which is (nlogn)
+
+-------------------------------------------------------------------------------
+
+Task #4:
+Time: O(nlogn)
+Space: O(n)
+Explanation: although no double loops were used, yet sorted() function was used which is (nlogn)
+
+-------------------------------------------------------------------------------

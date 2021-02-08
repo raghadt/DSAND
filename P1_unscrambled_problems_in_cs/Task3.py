@@ -48,28 +48,37 @@ The percentage should have 2 decimal digits
 
 
 
-codes_set = set()
+codes_list = []
 count_080 = 0
+
+# for record in calls:
+#   if record[0] starts with (080):
+#     if record[1] starts with '(' then add what is between '(' and ')' to the container. 
+#     if record[1] starts with '140' then add '140' to the container.
+#     if record[1] starts with 7, 8, or 9 then add the first four digits of record[1] to the container.
 
 for i in range(len(calls)):
   code_val = ''
-  caller = calls[i][1]
+  caller = calls[i][0]
+  rec = calls[i][1]
 
-  if caller[1]=='0':
-    if caller[0:5]=='(080)':
-      count_080+=1
-    codes_set.add(caller.split(')')[0].split('(')[-1])
+  if caller[:5] == '(080)':
+    if rec[0]=='(':
+      paranthesis_index = rec.find(')')
+      codes_list.append(rec[:paranthesis_index+1])
+    elif rec[:3] == '140':
+      codes_list.append('140')
+    else:
+      codes_list.append(rec[:4])
 
-  elif caller[0] in ['7','8','9']:
-    codes_set.add(caller.split(' ')[0])
+count_080 = codes_list.count('(080)')
 
-  else:
-    codes_set.add('140')
-codes_set=sorted(codes_set)
+codes_set=sorted(set(codes_list))
+
+
 print("The numbers called by people in Bangalore have codes:")
 for i in list(codes_set):
   print(i)
-
 
 
 
@@ -85,4 +94,5 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
-print("{} percent of calls from fixed lines in Bangalore are calls".format(count_080/len(calls)*100))
+percent_080 = count_080/len(codes_list)*100
+print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(round(percent_080, 2)))
