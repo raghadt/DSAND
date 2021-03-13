@@ -207,3 +207,88 @@ def pop(self):
     self.head = self.head.next
 
     return node.value
+
+
+
+
+def insert(self, value, pos):
+    """ Insert value at pos position in the list. If pos is larger than the
+        length of the list, append to the end of the list. """
+    # If the list is empty 
+    if self.head is None:
+        self.head = Node(value)
+        return
+        
+    if pos == 0:
+        self.prepend(value)
+        return
+
+    index = 0
+    node = self.head
+    while node.next and index <= pos:
+        if (pos - 1) == index:
+            new_node = Node(value)
+            new_node.next = node.next
+            node.next = new_node
+            return
+
+        index += 1
+        node = node.next
+    else:
+        self.append(value)
+
+
+
+#------------------------------------------------------
+# --------- Reverse Linked List ---------------------
+#------------------------------------------------------
+
+
+# Helper Code
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        
+    def append(self, value):
+        if self.head is None:
+            self.head = Node(value)
+            return
+        
+        node = self.head
+        while node.next:
+            node = node.next
+
+        node.next = Node(value)
+        
+    def __iter__(self):
+        node = self.head
+        while node:
+            yield node.value
+            node = node.next
+            
+    def __repr__(self):
+        return str([v for v in self])
+
+def reverse(linked_list):
+    new_list = LinkedList()
+    prev_node = None
+
+
+    for value in linked_list:
+        new_node = Node(value)
+        new_node.next = prev_node
+
+        prev_node = new_node
+
+    new_list.head = prev_node
+
+    return new_list
+
+
+    
