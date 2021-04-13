@@ -1,0 +1,7 @@
+Solution #3 Explaination:
+
+for this solution, a dictionary of generated encoding were mapped to the letter depending on its order.
+dictionary is direct access, linear for loop were used as well
+
+Time complexity: O(1) + O(n) = O(n), where n is the size of the sentence list.
+Space complexity: O(m), where m is the size unique characters in the sentences.

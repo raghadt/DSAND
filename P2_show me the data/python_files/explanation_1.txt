@@ -1,0 +1,6 @@
+Solution #1 Explaination:
+
+For fast accessing, dictionaries were used to store the value of LRU cache. python's deque library from collections were used as well to allow ordered queue.
+
+Time complexity: O(1), since dictionary is O(1).
+Space complexity: O(n), where n is the size of the cache.

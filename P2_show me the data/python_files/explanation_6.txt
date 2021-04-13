@@ -1,0 +1,6 @@
+Solution #6 Explaination:
+
+here i used set because it provides the feature of storing distinct values. also it has the 'intersection' function, while in union, i can just append them.
+
+Time complexity: O(n), linear for loops
+Space complexity: O(n), where n is the number of values

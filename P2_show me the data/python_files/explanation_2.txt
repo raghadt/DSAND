@@ -1,0 +1,6 @@
+Solution #2 Explaination:
+
+for this solution, list (or array) were used, a for loop is presented which makes the time complexity linear.
+
+Time complexity: O(n), where n is the size of the file list.
+Space complexity: O(n), where n is the size of the  file list.

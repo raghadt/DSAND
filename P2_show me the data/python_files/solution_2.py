@@ -15,10 +15,22 @@ def find_files(suffix, path, files=[]):
     Returns:
        a list of paths
     """
-    if path:
-        suffix+='/' + path
+
+    #  Handling cases:
+    if path == None:
+        return "no path found, kindly input a path"
+    if suffix == None:
+        return "no suffix found, kindly input a suffix"
+
+    suffix+='/' + path
     
-    for file in os.listdir(suffix):
+    try:
+        suff = os.listdir(suffix)
+    
+    except:
+        return "nothing found"
+
+    for file in suff:
         new_path = suffix +  '/' + file
         
         if os.path.isfile(new_path) and  new_path[-2:]=='.c':
@@ -38,6 +50,7 @@ print(find_files('.', 'testdir/subdir4'))
 print('------------------------------------------------')
 print(find_files('.', 'testdir/subdir5'))
 print('------------------------------------------------')
-
+print(find_files('.', 'testdir/subdi'))
+print('------------------------------------------------')
 
 

@@ -1,0 +1,7 @@
+Solution #5 Explaination:
+
+linkedlist were used here, i used time to generate a timestamp, children were generated for the linkedlist to connect the blockchains.
+
+
+Time complexity: O(1), because appending is direct and there's no loop
+Space complexity: O(1), where n is the number of blocks being added

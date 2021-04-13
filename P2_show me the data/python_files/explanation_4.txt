@@ -1,0 +1,7 @@
+Solution #4 Explaination:
+
+recursion were used here to check if the user is in the group. the point here is to check first if the user is in the group name, if not go through the parents and check.
+
+
+Time complexity: O(n), where n is the number of users
+Space complexity: O(n), where n is the number of users

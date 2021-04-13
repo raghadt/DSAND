@@ -30,7 +30,7 @@ sub_child.add_user(sub_child_user)
 child.add_group(sub_child)
 parent.add_group(child)
 
-def is_user_in_group(user, group):
+def is_user_in_group(user=None, group=None):
     """
     Return True if user is in the group, False otherwise.
 
@@ -38,7 +38,21 @@ def is_user_in_group(user, group):
       user(str): user name/id
       group(class:Group): group to check user membership against
     """
-    
+    #--- handling cases:
+
+    if user == None:
+        print("No input for user")
+        return False
+    elif group == None:
+        print("No input for group")
+        return False
+
+    if not isinstance(group, Group):
+        print("Invalid group")
+        return False
+
+
+
     if user == group.get_name():
         return True
     
@@ -53,3 +67,7 @@ def is_user_in_group(user, group):
 print(is_user_in_group("parent", parent)==True)
 print(is_user_in_group("child", child)==True)
 print(is_user_in_group("", child)==False)
+print(is_user_in_group("invalidgroup", 'group')==False)
+print(is_user_in_group("child")==False)
+
+
